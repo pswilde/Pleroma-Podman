@@ -53,6 +53,10 @@ podman run $runmode \
     -e POSTGRES_HOST=localhost \
     $runvars
 
+if [[ $1 == "build-setup" ]]; then
+    podman exec pleroma-web /pleroma/bin/pleroma_ctl config migrate_to_db
+fi
+
 if [[ $1 == "gen-keypair" ]]; then
     podman exec pleroma-web mix web_push.gen.keypair
 fi
