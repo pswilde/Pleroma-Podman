@@ -53,9 +53,9 @@ The `podman-run.sh` script does this automatically when run with the `db-setup` 
 ```
 This creates a pod and the postgresql container then runs the below
 ```sh 
-<You don't need to do this bit>
+>You don't need to do this bit<
 podman exec -i pleroma-db psql -U pleroma -c "CREATE EXTENSION IF NOT EXISTS citext;"
-<You don't need to do that bit>
+>You don't need to do that bit<
 ```
 
 Configure Pleroma. Copy the following to `config/secret.exs`:
