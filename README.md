@@ -120,12 +120,13 @@ Again, the `podman-run.sh` script has runtime parameters to do this.
 ```sh
 ./podman-run.sh gen-keypair
 ```
-Which does sets up the containers again and runs the following:
+Which sets up the containers again and runs the following:
 ```
 >You don't need to do this<
 podman exec pleroma-web mix web_push.gen.keypair
 >You don't need to do that<
 ```
+Put the output in your secret.exs (may not be necessary due to DB migration of config, but I've left it here for clarity again)
 
 You will need to build the image again, to pick up your updated `secret.exs` file:
 Once again, `podman-run.sh` has a parameter for it:
@@ -152,7 +153,7 @@ You can now setup a HAProxy or Nginx reverse proxy in a container or on your hos
 
 As with anything, I've only tested this on my systems, and the process of going through getting things working may have meant some steps are missing from this guide. At some point I will test this process again to ensure the script works well, but if anyone has any queries about it then let me know.
 
-## Other Docker images
+## Other Container images
 
 Here are other Pleroma Container images that helped me build mine:
 
